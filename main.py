@@ -3,8 +3,10 @@ import threading, time
 import subprocess
 
 
+soundFontPath = "/home/max/Downloads/Essential Keys-sforzando-v9.6.sf2"
+
 subprocess.run(["killall", "fluidsynth"])
-subprocess.Popen(["fluidsynth", "-a", "alsa", "-m", "alsa_seq", "/home/max/Downloads/Essential Keys-sforzando-v9.6.sf2"])
+subprocess.Popen(["fluidsynth", "-a", "alsa", "-m", "alsa_seq", soundFontPath])
 
 def checkMidiConnection(): 
     if getMidiDevices() and getSynthDevices() and isSynthActive():
